@@ -24,8 +24,16 @@ public class Carrinho {
 		this.ingressos = ingressos;
 	}
 	
-	public boolean isSelecionado(Lugar lugar) {
-		return ingressos.stream().map(Ingresso::getLugar).anyMatch(l -> l.equals(lugar));
+	public boolean isSelecionado(Lugar lugar, Sessao sessao) {
+		for (Ingresso ingresso: ingressos) {
+			if ( ingresso.getLugar().equals(lugar) && ingresso.getSessao().equals(sessao)  ) {
+				return true;
+			}
+		}
+		return false;
+//		boolean selecionado = ingressos.stream().anyMatch(ingresso -> {return ingresso.getLugar().equals(lugar) && ingresso.getSessao().equals(sessao);});
+//		return selecionado;
+//		return ingressos.stream().map(Ingresso::getLugar).anyMatch(l -> l.equals(lugar));
 	}
 	
 	public BigDecimal getTotal() {
