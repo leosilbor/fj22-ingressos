@@ -41,6 +41,8 @@
                     <label for="password">Senha:</label>
                     <input id="password" type="password" name="password" class="form-control">
                 </div>
+                
+                <input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" >
 
                 <button class="btn btn-primary" type="submit">Entrar</button>
 

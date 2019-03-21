@@ -45,6 +45,8 @@
 					<span class="text-danger">${error.defaultMessage}</span>
 				</c:forEach>
 			</div>
+			
+			<input type="hidden" name="${_csrf.parameterName }" value="${_csrf.token }" >
 
             <button type="submit" class="btn btn-primary">Gravar</button>
         </form>
